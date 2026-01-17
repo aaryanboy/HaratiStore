@@ -1,0 +1,36 @@
+import { createClient } from '@/lib/supabase/server'
+import { redirect } from 'next/navigation'
+import ImageManager from './ImageManager'
+
+export default async function OwnerImagesPage() {
+  const supabase = await createClient()
+
+  const { data: { user } } = await supabase.auth.getUser()
+
+  if (!user) {
+    redirect('/login')
+  }
+
+  // Check if user is owner
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('role')
+    .eq('id', user.id)
+    .single()
+
+  if (profile?.role !== 'owner') {
+    redirect('/dashboard')
+  }
+
+  // Get images from bucket
+  const { data: images } = await supabase
+    .storage
+    .from('images')
+    .list('', {
+      limit: 100,
+      offset: 0,
+      sortBy: { column: 'created_at', order: 'desc' },
+    })
+
+  return <ImageManager initialImages={images || []} />
+}
