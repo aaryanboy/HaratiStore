@@ -73,6 +73,11 @@ export default function DashboardContent({ user, profile }: DashboardContentProp
                 <h3 className="text-white text-lg font-semibold mb-2">Analytics</h3>
                 <p className="text-white/50 text-sm leading-relaxed">View store statistics and insights</p>
               </div>
+              <Link href="/owner/settings" className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-amber-500/30 transition-all hover:-translate-y-1 hover:bg-white/10 hover:shadow-2xl hover:border-amber-500/50 block group">
+                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-200">⚙️</div>
+                <h3 className="text-white text-lg font-semibold mb-2">Manage Site</h3>
+                <p className="text-white/50 text-sm leading-relaxed">Update homepage text and images</p>
+              </Link>
             </>
           )}
 
