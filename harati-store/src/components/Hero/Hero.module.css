@@ -1,0 +1,174 @@
+.heroContainer {
+    min-height: 85vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    /* Deep Maroon Base */
+    background-image: url('../../assets/images/hero_texture.png');
+    background-size: 400px;
+    /* Repeat pattern */
+    background-blend-mode: soft-light;
+    /* Blend with base color */
+    color: var(--color-secondary);
+    text-align: center;
+    padding: var(--spacing-xl);
+    position: relative;
+}
+
+/* Darken overlay for text readability */
+.heroContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(74, 4, 4, 0.7) 0%, rgba(74, 4, 4, 0.9) 100%);
+    z-index: 0;
+}
+
+.content {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    /* Gold Border */
+    padding: var(--spacing-xl);
+    /* Double border effect using box-shadow */
+    box-shadow: inset 0 0 0 5px var(--color-primary), inset 0 0 0 6px rgba(212, 175, 55, 0.3);
+    background: rgba(74, 4, 4, 0.6);
+    /* Semi-transparent backing for text area */
+    backdrop-filter: blur(2px);
+}
+
+.subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+/* Small ornamental line above subtitle */
+.subtitle::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--color-secondary);
+    margin: 0 auto 10px;
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 6.5rem;
+    line-height: 0.9;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-secondary);
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: var(--spacing-lg);
+    width: 100%;
+    justify-content: center;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: rgba(212, 175, 55, 0.5);
+}
+
+.diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--color-secondary);
+    transform: rotate(45deg);
+}
+
+.tagline {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-style: italic;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.description {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-xl);
+    max-width: 550px;
+}
+
+.actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.ctaButtonPrimary {
+    padding: 1rem 3rem;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: 1px solid var(--color-secondary);
+    transition: all var(--transition-normal);
+}
+
+.ctaButtonPrimary:hover {
+    background-color: transparent;
+    color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.ctaButtonSecondary {
+    padding: 1rem 3rem;
+    background-color: transparent;
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.ctaButtonSecondary:hover {
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .content {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        padding: 0;
+    }
+}

@@ -1,0 +1,35 @@
+:root {
+  /* Colors */
+  --color-primary: #4A0404; /* Deep Maroon */
+  --color-secondary: #D4AF37; /* Gold */
+  --color-background: #FDFBF7; /* Cream/Off-white */
+  --color-text: #2C2C2C; /* Charcoal */
+  --color-text-light: #555555;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 8rem;
+
+  /* Layout */
+  --container-width: 1400px;
+  --border-radius-xs: 4px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 24px;
+  --border-radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
